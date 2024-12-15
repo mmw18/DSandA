@@ -7,4 +7,81 @@
  * December 15th, 2024
  */
 
- 
+ import java.util.HashMap;
+
+public class CR1Bag<T> {
+    private HashMap<T, Integer> items;
+
+    // This is the constructor to initialize the bag
+    public CR1Bag() {
+        items = new HashMap<>();
+    }
+
+    // This is to add an item to the bag, with item being the item
+    public void add(T item) {
+        items.put(item, items.getOrDefault(item, 0) + 1);
+    }
+
+    // This is to remove a single occurance of an item from the bag, item = the item
+    public void remove(T item) {
+        if (items.containsKey(item)) {
+            if (items.get(item) == 1) {
+                items.remove(item);
+            } else {
+                items.put(item, items.get(item) - 1);
+            }
+        } else {
+            System.out.println("Sorry, this item cannot be found in the bag at this time.");
+        }
+    }
+
+    // This is to check if an item exists in the bag. Item is the item being checked and returned is a T/F 
+    public boolean contains(T item) {
+        return items.containsKey(item);
+    }
+
+    // This counts and returns how many of an item there are in the bag. 
+    public int count(T item) {
+        return items.getOrDefault(item, 0);
+    }
+
+    // This simply prints out the entire contents of the bag
+    public void printContents() {
+        System.out.println("Bag contents: " + items);
+    }
+
+    // This is the main method that will show how the bag actually works when being interacted with by the user
+    public static void main(String[] args) {
+        CR1Bag<String> bag = new CR1Bag<>();
+
+        // Adding to the bag
+        bag.add("Chocolate Chip Cookies");
+        bag.add("Snickerdoodle Cookies");
+        bag.add("Chocolate Chip Cookies"); // adding a duplicate for testing's sake
+        bag.add("Peanut Butter Cookies");
+
+        // Print what's in the bag
+        System.out.println("Greetings! The initial contents of this bag are:");
+        bag.printContents();
+
+        // Test of the 'contains' mehtod
+        System.out.println("\nTesting existence of a cookie(s):");
+        System.out.println("Contains 'Chocolate Chip Cookies': " + bag.contains("Chocolate Chip Cookies"));
+        System.out.println("Contains 'Oatmeal Raisin Cookies': " + bag.contains("Oatmeal Raisin Cookies"));
+
+        // Test of the 'count' method
+        System.out.println("\nTesting count of cookies:");
+        System.out.println("Count of 'Chocolate Chip Cookies': " + bag.count("Chocolate Chip Cookies"));
+        System.out.println("Count of 'Oatmeal Raisin Cookies': " + bag.count("Oatmeal Raisin Cookies"));
+
+        // Removing an element
+        System.out.println("\nRemoving a cookie:");
+        bag.remove("Chocolate Chip Cookies");
+        bag.printContents();
+
+        // Test of 'contains' and 'count' on cookie removed by previous method
+        System.out.println("\nTesting if remove was successful:");
+        System.out.println("Contains 'Chocolate Chip Cookies': " + bag.contains("Chocolate Chip Cookies"));
+        System.out.println("Count of 'Chocolate Chip Cookies': " + bag.count("Chocolate Chip Cookies"));
+    }
+}
