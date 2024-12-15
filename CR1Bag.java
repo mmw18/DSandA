@@ -83,7 +83,7 @@ public class CR1Bag<T> {
         System.out.println("Updated cookies in the bag:");
         bag.printContents();
 
-        // Test of 'contains' and 'count' on cookie removed by previous method
+        // Test of 'count' on cookie removed by previous method
         System.out.println("\nChecking if the remove of a single Chocolate Chip Cookie was successful:");
         System.out.println("Chocolate Chip Cookies in the bag: " + bag.count("Chocolate Chip Cookies"));
     }
