@@ -1,3 +1,13 @@
+/**
+ * Module 5 Critical Thinking
+ * Megan M. Wright
+ * Colorado State University Global
+ * CSC400-1: Data Structures and Algorithms
+ * Professor Pensado, Herbert
+ * DJanuary 19th, 2024
+ */
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
