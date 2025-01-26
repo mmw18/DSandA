@@ -114,38 +114,34 @@ public class CT6Option2DequeADT {
  * PSEUDOCODE
  * 
  * START
- * CustomDeque Class: This will be used to hold elements (in this case integers)
- * and allow operations at both the front and back of the deque. It will also 
- * allow traversing through elements using a custom iterator.
- * Use a LinkedList for the internal storage since it efficiently handles 
- * additions and removals at both ends.
+ * CustomDeque Class:
+ * This is where we’ll store our integers, and we’ll make it so you can add or remove 
+ * them from either the front or the back. For the storage, we’ll use a LinkedList 
+ * because it’s great at handling stuff at both ends.
  * 
- * Methods needed:
- * - Adding an element to the front: This will take an integer and place it at 
- * the front of the deque.
- * - Adding an element to the back: This will take an integer and place it at 
- * the back of the deque.
- * - Removing an element from the front: This will remove and return the integer 
- * at the front of the deque. If the deque is empty, throw an error.
- * - Removing an element from the back: This will remove and return the integer 
- * at the back of the deque. If the deque is empty, throw an error.
- * - Checking if the deque is empty: This will return true if the deque has no 
- * elements, false otherwise.
- * - Providing an iterator to traverse the deque: The iterator will allow 
- * traversing all elements in the deque from front to back.
+ * This class needs to do:
+ * - Add to the front: Take a number and stick it at the front of the deque.
+ * - Add to the rear: Take a number and stick it at the back of the deque.
+ * - Remove from the front: Take the number at the front, return it, and remove it. 
+ *   If the deque is empty, we’ll throw an error.
+ * - Remove from the rear: Same deal as removing from the front, but it works on 
+ *   the back of the deque.
+ * - Check if it’s empty: Just let us know if there’s nothing in the deque (true or false).
+ * - Traverse with an iterator: This will let us loop through all the numbers 
+ *   from front to back.
  * 
  * CustomDequeIterator Class:
- * - This will serve as an inner class within CustomDeque.
- * - The iterator will have methods to:
- *   - Check if there are more elements to traverse (hasNext).
- *   - Return the next element in the deque and move to the next position (next).
- *   - Throw an error if next is called when no elements remain.
+ * - This is a little helper class that we’ll use to go through the deque:
+ *   - hasNext: Tells us if there’s another number left to check.
+ *   - next: Gives us the next number and moves to the next position. If we’re at the end, 
+ *     it’ll throw an error.
  * 
- * Main Method/Program:
- * - Create an instance of the CustomDeque.
- * - Add 10 integers (switching between the front and back).
- * - Print out the elements in the deque using the custom iterator.
- * - Remove all elements from the front, printing each element as it’s removed.
- * - Verify that the deque is empty after all elements are removed.
+ * Main Program:
+ * - Create a new deque.
+ * - Add 10 numbers to it, switching between adding to the front and the back.
+ * - Use the iterator to print out everything that’s in the deque.
+ * - Start removing all the numbers from the front, one at a time, and print each one.
+ * - When it’s empty, confirm that there’s nothing left in the deque.
  * END
  */
+
